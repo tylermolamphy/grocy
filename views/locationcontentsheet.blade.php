@@ -75,10 +75,16 @@
 @endif
 <div class="page">
 	<h1 class="pt-4 text-center">
+		@if(!empty(GROCY_CUSTOM_HEADER_IMAGE))
+		<img src="{{ string_starts_with(GROCY_CUSTOM_HEADER_IMAGE, 'http') ? GROCY_CUSTOM_HEADER_IMAGE : $U('/' . GROCY_CUSTOM_HEADER_IMAGE . '?v=', true) . $version }}"
+			height="30"
+			class="d-none d-print-flex mx-auto">
+		@else
 		<img src="{{ $U('/img/logo.svg?v=', true) }}{{ $version }}"
 			width="114"
 			height="30"
 			class="d-none d-print-flex mx-auto">
+		@endif
 		{{ $location->name }}
 		<a class="btn btn-outline-dark btn-sm responsive-button print-single-location-button d-print-none"
 			href="#">
