@@ -135,9 +135,14 @@
 		class="navbar navbar-expand-lg navbar-light fixed-top">
 		<a class="navbar-brand py-0"
 			href="{{ $U('/') }}">
+			@if(!empty(GROCY_CUSTOM_HEADER_IMAGE))
+			<img src="{{ string_starts_with(GROCY_CUSTOM_HEADER_IMAGE, 'http') ? GROCY_CUSTOM_HEADER_IMAGE : $U('/' . GROCY_CUSTOM_HEADER_IMAGE . '?v=', true) . $version }}"
+				height="30">
+			@else
 			<img src="{{ $U('/img/logo.svg?v=', true) }}{{ $version }}"
 				width="114"
 				height="30">
+			@endif
 		</a>
 		<span id="clock-container"
 			class="text-muted font-italic d-none">

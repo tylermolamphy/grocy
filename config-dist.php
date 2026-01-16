@@ -63,6 +63,12 @@ Setting('BASE_PATH', '');
 // or for example "https://example.com/grocy" when using a subdirectory
 Setting('BASE_URL', '/');
 
+// Custom header image to replace the Grocy logo in the navbar
+// Can be a path relative to public/ (e.g., 'img/custom-logo.png')
+// or an absolute URL (e.g., 'https://example.com/logo.png')
+// Leave empty to use the default Grocy logo
+Setting('CUSTOM_HEADER_IMAGE', '');
+
 // The plugin to use for external barcode lookups,
 // must be the filename (folder "/plugins" for built-in plugins or "/data/plugins" for user plugins) without the .php extension,
 // see /plugins/DemoBarcodeLookupPlugin.php for a commented example implementation

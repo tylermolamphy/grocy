@@ -373,10 +373,16 @@ $listItem->last_price_total = $listItem->price * $listItem->amount;
 <div class="d-none d-print-block">
 	<div id="print-header">
 		<h1 class="text-center">
+			@if(!empty(GROCY_CUSTOM_HEADER_IMAGE))
+			<img src="{{ string_starts_with(GROCY_CUSTOM_HEADER_IMAGE, 'http') ? GROCY_CUSTOM_HEADER_IMAGE : $U('/' . GROCY_CUSTOM_HEADER_IMAGE . '?v=', true) . $version }}"
+				height="30"
+				class="d-print-flex mx-auto">
+			@else
 			<img src="{{ $U('/img/logo.svg?v=', true) }}{{ $version }}"
 				width="114"
 				height="30"
 				class="d-print-flex mx-auto">
+			@endif
 			{{ $__t("Shopping list") }}
 		</h1>
 		@if (FindObjectInArrayByPropertyValue($shoppingLists, 'id', $selectedShoppingListId)->name != $__t("Shopping list"))
