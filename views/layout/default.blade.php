@@ -165,7 +165,7 @@
 			class="collapse navbar-collapse">
 			<ul class="navbar-nav navbar-sidenav">
 
-				@if(GROCY_FEATURE_FLAG_STOCK)
+				@if(GROCY_FEATURE_FLAG_STOCK && !GROCY_HIDE_NAV_STOCK_OVERVIEW)
 				<li class="nav-item nav-item-sidebar @if($viewName == 'stockoverview') active-page @endif"
 					data-toggle="tooltip"
 					data-placement="right"
@@ -177,7 +177,7 @@
 					</a>
 				</li>
 				@endif
-				@if(GROCY_FEATURE_FLAG_SHOPPINGLIST)
+				@if(GROCY_FEATURE_FLAG_SHOPPINGLIST && !GROCY_HIDE_NAV_SHOPPING_LIST)
 				<li class="nav-item nav-item-sidebar @if($viewName == 'shoppinglist') active-page @endif"
 					data-toggle="tooltip"
 					data-placement="right"
@@ -189,7 +189,7 @@
 					</a>
 				</li>
 				@endif
-				@if(GROCY_FEATURE_FLAG_RECIPES)
+				@if(GROCY_FEATURE_FLAG_RECIPES && !GROCY_HIDE_NAV_RECIPES)
 				<div class="nav-item-divider"></div>
 				<li class="nav-item nav-item-sidebar permission-RECIPES @if($viewName == 'recipes') active-page @endif"
 					data-toggle="tooltip"
@@ -201,7 +201,7 @@
 						<span class="nav-link-text">{{ $__t('Recipes') }}</span>
 					</a>
 				</li>
-				@if(GROCY_FEATURE_FLAG_RECIPES_MEALPLAN)
+				@if(GROCY_FEATURE_FLAG_RECIPES_MEALPLAN && !GROCY_HIDE_NAV_MEAL_PLAN)
 				<li class="nav-item nav-item-sidebar permission-RECIPES_MEALPLAN @if($viewName == 'mealplan') active-page @endif"
 					data-toggle="tooltip"
 					data-placement="right"
@@ -215,7 +215,7 @@
 				</li>
 				@endif
 				@endif
-				@if(GROCY_FEATURE_FLAG_CHORES)
+				@if(GROCY_FEATURE_FLAG_CHORES && !GROCY_HIDE_NAV_CHORES_OVERVIEW)
 				<div class="nav-item-divider"></div>
 				<li class="nav-item nav-item-sidebar @if($viewName == 'choresoverview') active-page @endif"
 					data-toggle="tooltip"
@@ -228,7 +228,7 @@
 					</a>
 				</li>
 				@endif
-				@if(GROCY_FEATURE_FLAG_TASKS)
+				@if(GROCY_FEATURE_FLAG_TASKS && !GROCY_HIDE_NAV_TASKS)
 				<li class="nav-item nav-item-sidebar @if($viewName == 'tasks') active-page @endif"
 					data-toggle="tooltip"
 					data-placement="right"
@@ -240,7 +240,7 @@
 					</a>
 				</li>
 				@endif
-				@if(GROCY_FEATURE_FLAG_BATTERIES)
+				@if(GROCY_FEATURE_FLAG_BATTERIES && !GROCY_HIDE_NAV_BATTERIES_OVERVIEW)
 				<li class="nav-item nav-item-sidebar @if($viewName == 'batteriesoverview') active-page @endif"
 					data-toggle="tooltip"
 					data-placement="right"
@@ -252,7 +252,7 @@
 					</a>
 				</li>
 				@endif
-				@if(GROCY_FEATURE_FLAG_EQUIPMENT)
+				@if(GROCY_FEATURE_FLAG_EQUIPMENT && !GROCY_HIDE_NAV_EQUIPMENT)
 				<li class="nav-item nav-item-sidebar permission-EQUIPMENT @if($viewName == 'equipment') active-page @endif"
 					data-toggle="tooltip"
 					data-placement="right"
@@ -264,7 +264,7 @@
 					</a>
 				</li>
 				@endif
-				@if(GROCY_FEATURE_FLAG_CALENDAR)
+				@if(GROCY_FEATURE_FLAG_CALENDAR && !GROCY_HIDE_NAV_CALENDAR)
 				<div class="nav-item-divider"></div>
 				<li class="nav-item nav-item-sidebar permission-CALENDAR @if($viewName == 'calendar') active-page @endif"
 					data-toggle="tooltip"
@@ -280,6 +280,7 @@
 
 				@if(GROCY_FEATURE_FLAG_STOCK)
 				<div class="nav-item-divider"></div>
+				@if(!GROCY_HIDE_NAV_PURCHASE)
 				<li class="nav-item nav-item-sidebar permission-STOCK_PURCHASE @if($viewName == 'purchase') active-page @endif"
 					data-toggle="tooltip"
 					data-placement="right"
@@ -290,6 +291,8 @@
 						<span class="nav-link-text">{{ $__t('Purchase') }}</span>
 					</a>
 				</li>
+				@endif
+				@if(!GROCY_HIDE_NAV_CONSUME)
 				<li class="nav-item nav-item-sidebar permission-STOCK_CONSUME @if($viewName == 'consume') active-page @endif"
 					data-toggle="tooltip"
 					data-placement="right"
@@ -300,7 +303,8 @@
 						<span class="nav-link-text">{{ $__t('Consume') }}</span>
 					</a>
 				</li>
-				@if(GROCY_FEATURE_FLAG_STOCK_LOCATION_TRACKING)
+				@endif
+				@if(GROCY_FEATURE_FLAG_STOCK_LOCATION_TRACKING && !GROCY_HIDE_NAV_TRANSFER)
 				<li class="nav-item nav-item-sidebar permission-STOCK_TRANSFER @if($viewName == 'transfer') active-page @endif"
 					data-toggle="tooltip"
 					data-placement="right"
@@ -312,6 +316,7 @@
 					</a>
 				</li>
 				@endif
+				@if(!GROCY_HIDE_NAV_INVENTORY)
 				<li class="nav-item nav-item-sidebar permission-STOCK_INVENTORY @if($viewName == 'inventory') active-page @endif"
 					data-toggle="tooltip"
 					data-placement="right"
@@ -323,7 +328,8 @@
 					</a>
 				</li>
 				@endif
-				@if(GROCY_FEATURE_FLAG_CHORES)
+				@endif
+				@if(GROCY_FEATURE_FLAG_CHORES && !GROCY_HIDE_NAV_CHORE_TRACKING)
 				<li class="nav-item nav-item-sidebar permission-CHORE_TRACK_EXECUTION @if($viewName == 'choretracking') active-page @endif"
 					data-toggle="tooltip"
 					data-placement="right"
@@ -335,7 +341,7 @@
 					</a>
 				</li>
 				@endif
-				@if(GROCY_FEATURE_FLAG_BATTERIES)
+				@if(GROCY_FEATURE_FLAG_BATTERIES && !GROCY_HIDE_NAV_BATTERY_TRACKING)
 				<li class="nav-item nav-item-sidebar permission-BATTERIES_TRACK_CHARGE_CYCLE @if($viewName == 'batterytracking') active-page @endif"
 					data-toggle="tooltip"
 					data-placement="right"

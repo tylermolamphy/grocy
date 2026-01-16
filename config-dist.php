@@ -162,6 +162,26 @@ Setting('FEATURE_FLAG_DISABLE_BROWSER_BARCODE_CAMERA_SCANNING', false); // Set t
 Setting('FEATURE_FLAG_AUTO_TORCH_ON_WITH_CAMERA', true); // Enables the torch automatically (if the device has one)
 
 
+// Navigation bar visibility
+// Set to true to hide specific items from the left navigation bar
+// (the feature must still be enabled via FEATURE_FLAG_* for the item to appear)
+Setting('HIDE_NAV_STOCK_OVERVIEW', false);
+Setting('HIDE_NAV_SHOPPING_LIST', false);
+Setting('HIDE_NAV_RECIPES', false);
+Setting('HIDE_NAV_MEAL_PLAN', false);
+Setting('HIDE_NAV_CHORES_OVERVIEW', false);
+Setting('HIDE_NAV_TASKS', false);
+Setting('HIDE_NAV_BATTERIES_OVERVIEW', false);
+Setting('HIDE_NAV_EQUIPMENT', false);
+Setting('HIDE_NAV_CALENDAR', false);
+Setting('HIDE_NAV_PURCHASE', false);
+Setting('HIDE_NAV_CONSUME', false);
+Setting('HIDE_NAV_TRANSFER', false);
+Setting('HIDE_NAV_INVENTORY', false);
+Setting('HIDE_NAV_CHORE_TRACKING', false);
+Setting('HIDE_NAV_BATTERY_TRACKING', false);
+
+
 // Default user settings
 // These settings can be changed per user and via the UI,
 // below are the defaults which are used when the user has not changed the setting so far
